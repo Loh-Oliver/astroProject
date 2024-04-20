@@ -1,0 +1,28 @@
+---
+import Item from "../../components/item.vue";
+export function getStaticPaths() {
+  // Return an array of predefined paths
+  return [
+    { params: { itemId: '1' } },
+    { params: { itemId: '2' } },
+    { params: { itemId: '3' } },
+    { params: { itemId: '4' } },
+    { params: { itemId: '5' } },
+    { params: { itemId: '6' } }
+  
+  ];
+}
+---
+
+<html>
+  <head>
+  </head>
+  <body>
+    <main>
+      <Item itemId={Astro.params.itemId} client:load/>
+      <br>
+    </main>
+  </body>
+</html>
+
+

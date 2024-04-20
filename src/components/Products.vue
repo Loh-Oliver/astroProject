@@ -8,10 +8,11 @@
           v-model="selectedFilter"
           @change="filterProducts"
         >
-          <option value="low">Price (Low to High)</option>
-          <option value="high">Price (High to Low)</option>
           <option value="alphabeticalAZ">Name (A to Z)</option>
           <option value="alphabeticalZA">Name (Z to A)</option>
+          <option value="low">Price (Low to High)</option>
+          <option value="high">Price (High to Low)</option>
+        
         </select>
       </div>
     </div>
@@ -27,12 +28,14 @@
             <img :src="product.image" />
           </div>
           <div class="inventory_item_description">
-            <astro>
-              <a :href="`/items/${product.id}`" class="inventory_item_name">
-                {{ product.name }}
-              </a>
-            </astro>
-            <div class="inventory_item_desc">{{ product.description }}</div>
+            <div class="inventory_item_label">
+              <astro>
+                <a :href="`/items/${product.id}`" class="inventory_item_name">
+                  {{ product.name }}
+                </a>
+              </astro>
+              <div class="inventory_item_desc">{{ product.description }}</div>
+            </div>
             <div class="pricebar">
               <div class="inventory_item_price">{{ product.cost }}</div>
               <button
@@ -58,7 +61,7 @@ export default {
   data() {
     return {
       products: [],
-      selectedFilter: "none",
+      selectedFilter: "alphabeticalAZ", // Set the initial value to "alphabeticalAZ"
       isPrimary: true, //Track button style
     };
   },
@@ -146,9 +149,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  font-family:
-    DM Mono,
-    "sans-serif";
+  font-family: "DM Mono";
   border-top: 1px solid #ededed; /* Example color */
   border-bottom: 1px solid #ededed; /* Example color */
   height: 56px;
@@ -159,7 +160,7 @@ export default {
 
 .header_text {
   color: #132322;
-  font-family: "DM Mono", sans-serif;
+  font-family: "DM Mono";
   font-size: 18px;
   font-weight: 500;
   line-height: 48px;
@@ -168,15 +169,16 @@ export default {
 .product_sort_container {
   background-image: url("/src/assets/Filtericon.webp");
   background-repeat: no-repeat;
-  background-size: 60%;
-  background-position: center; /* Adjust the position of the image */
+  background-size: 10%;
+  background-position: left;
   border: 1px solid #ededed;
   box-sizing: border-box;
   border-radius: 5px;
-  padding: 0; /* Remove padding to fit only the image */
-  width: 40px; /* Set width to the width of the image */
+  padding: 0;
+  width: 250px;
   height: 35px;
-  color: transparent;
+  margin-right: 30px;
+  text-indent: 60px; /* Adjust this value based on the width of the background image */
 }
 
 .inventory_container {
@@ -209,6 +211,11 @@ export default {
   width: 100%;
 }
 
+.inventory_item_name {
+  display: flex;
+  margin-bottom: 20px;
+}
+
 .image-container {
   flex: 0 0 auto; /* Don't allow image to grow */
   margin-right: 20px; /* Add space between image and details */
@@ -228,7 +235,7 @@ export default {
   justify-content: space-between;
 }
 .inventory_item_name {
-  font-family: "DM Mono", sans-serif;
+  font-family: "DM Mono", monospace;
   font-size: 20px;
   font-weight: 500;
   color: #18583a;
@@ -239,7 +246,6 @@ export default {
 }
 
 .inventory_item_desc {
-  font-family: "DM Sans", sans-serif;
   font-size: 16px;
   line-height: 20px;
   color: #132322;
@@ -255,7 +261,6 @@ export default {
 .inventory_item_price {
   border-top: 1px solid #ededed;
   color: #132322;
-  font-family: "DM Mono", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 36px;
@@ -272,7 +277,6 @@ export default {
   font-size: 18px;
   height: 40px;
   width: 200px;
-  font-family: "DM Sans", sans-serif;
   text-decoration: none;
   border-radius: 4px;
   line-height: 1px;
@@ -326,6 +330,21 @@ export default {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+  }
+
+  .product_sort_container {
+    background-image: url("/src/assets/Filtericon.webp");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center; /* Adjust the position of the image */
+    border: 1px solid #ededed;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0; /* Remove padding to fit only the image */
+    width: 40px; /* Set width to the width of the image */
+    height: 35px;
+    margin-right: 30px;
+    color: transparent;
   }
 }
 </style>

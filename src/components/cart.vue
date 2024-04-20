@@ -23,7 +23,7 @@
                   'btn',
                   'btn_inventory',
                 ]"
-                @click="addItemToCart(product)"
+                @click="removeItemFromCart(product)"
               >
                 {{ product.buttonText }}
               </button>
@@ -80,17 +80,15 @@ export default {
 .cart_list {
   border: 1px solid #ededed;
   background: #fff;
-  position: relative;
-  margin-bottom: 12px;
-  display: -webkit-flex;
-  display: flex;
   box-sizing: border-box;
   border-radius: 8px;
-  height: 240px;
-  width: 100%;
-  margin-left: 10px;
-  margin-right: 10px;
+  height: 100%;
+  width: calc(100% - 40px); /* Adjusted width to accommodate margins */
+  margin: 0 20px; /* Set left and right margins to 20px */
+  overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+  margin-bottom: 32px;
 }
+
 .cart_item {
   display: flex;
 }
@@ -104,6 +102,5 @@ export default {
   align-items: center; /* Center vertically */
   margin-left: 10px;
   margin-top: 10px;
-  
 }
 </style>

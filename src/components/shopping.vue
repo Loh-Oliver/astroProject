@@ -1,14 +1,17 @@
 <template>
-  <div>
+  
+  <div class="shopping_container">
     <header>
+     
       <nav>
         <div class="burger_menu_wrapper">
           <div class="burger_menu">
-            <component :is="Slide" v-if="Slide">
+            <!--  <component :is="Slide" v-if="Slide">
               <a id="home" href="#">
                 <span>Home</span>
               </a>
-            </component>
+            </component> -->
+            ≡
           </div>
         </div>
         <div class="header_name">Swag Labs</div>
@@ -55,12 +58,12 @@
             target="_blank"
             rel="noreferrer"
             data-test="social-twitter"
-            > <img
+          >
+            <img
               class="social_icon"
               src="/src/assets/twitter.svg"
               alt="Facebook Icon"
-            /></a
-          >
+          /></a>
         </li>
         <li class="social_facebook">
           <a
@@ -82,12 +85,12 @@
             target="_blank"
             rel="noreferrer"
             data-test="social-linkedin"
-            > <img
+          >
+            <img
               class="social_icon"
               src="/src/assets/linkedin.svg"
               alt="Facebook Icon"
-            /></a
-          >
+          /></a>
         </li>
       </ul>
       <div class="footer_copy" data-test="footer-copy">
@@ -127,6 +130,14 @@ export default {
 </script>
 
 <style>
+.shopping_container {
+  width: 100vw; /* Set width to 100% of the viewport width */
+  height: 100vh; /* Set height to 100% of the viewport height */
+  overflow-x: hidden; /* Hide horizontal overflow */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
 body {
   margin: 0;
 }
@@ -147,11 +158,14 @@ body {
 </style>
 
 <style scoped>
+
+
 header {
+  position: relative;
   height: 60px;
   text-align: right;
   font-size: 30px;
-  padding-top: 20px;
+  padding-top: 5px;
 }
 
 header button {
@@ -179,7 +193,6 @@ nav {
 }
 .header_name {
   text-align: center;
-  font-family: "DM Mono", monospace;
   font-size: 33px;
   line-height: 48px;
   text-align: center;
@@ -187,14 +200,15 @@ nav {
 }
 
 .cart_btn {
-  display: flex;
+  display: relative;
   align-items: center;
+  margin-right: 15px;
 }
 
 .cart_notification {
   position: absolute; /* Position the circle span relative to its parent */
-  top: 10px; /* Adjust the top position */
-  right: -5px; /* Adjust the right position */
+  top: 15px; /* Adjust the top position */
+  right: 5px; /* Adjust the right position */
   background-color: red; /* Background color of the circle */
   color: white; /* Text color */
   width: 25px; /* Width of the circle */
@@ -204,25 +218,29 @@ nav {
   display: flex; /* Use flexbox for centering content */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
+  
 }
 
 .product_btn {
-  width: 100%;
+  width: calc(100% - 40px);
   margin-left: 15px;
   margin-right: 15px;
   border-radius: 4px;
   background-color: white;
   border: 2px solid black;
   margin-bottom: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+
 }
 
 .checkout_btn {
-  width: 100%;
+  width: calc(100% - 40px);
   margin-left: 15px;
   margin-right: 15px;
   border-radius: 4px;
-  background-color: #4caf50;
+  background-color: #70cc84;
   border: none;
+  margin-bottom: 100%;
 }
 
 .footer {
@@ -240,7 +258,6 @@ nav {
 .social li {
   display: inline-block; /* Display social icons horizontally */
   margin-right: 10px; /* Add some space between social icons */
-  
 }
 
 .social li a {
@@ -248,10 +265,9 @@ nav {
   width: 40px; /* Set the width and height of the circular icon */
   height: 40px;
   border-radius: 50%; /* Make the icon circular */
-  background-color: green; /* Background color of the icon */
+  background-color: #70cc84; /* Background color of the icon */
   text-align: center; /* Center align the text */
   line-height: 40px; /* Vertically center the text */
-  
 }
 
 .social li a:hover {
@@ -263,7 +279,7 @@ nav {
   height: 20px; /* Adjust the height of the icon */
 
   overflow: hidden; /* Hide any overflow beyond the circle */
- margin-top: 9px;
+  margin-top: 9px;
 }
 
 .footer_copy a {

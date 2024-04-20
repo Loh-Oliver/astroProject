@@ -12,7 +12,6 @@
           <option value="alphabeticalZA">Name (Z to A)</option>
           <option value="low">Price (Low to High)</option>
           <option value="high">Price (High to Low)</option>
-        
         </select>
       </div>
     </div>
@@ -61,7 +60,7 @@ export default {
   data() {
     return {
       products: [],
-      selectedFilter: "alphabeticalAZ", // Set the initial value to "alphabeticalAZ"
+      selectedFilter: "alphabeticalAZ",
       isPrimary: true, //Track button style
     };
   },
@@ -202,13 +201,15 @@ export default {
   border: 1px solid #ededed;
   background: #fff;
   position: relative;
-  margin-bottom: 12px;
   display: -webkit-flex;
   display: flex;
   box-sizing: border-box;
   border-radius: 8px;
   height: 240px;
-  width: 100%;
+  width: calc(
+    50% - 10px
+  ); /* Set the width of each item to 50% minus the space between */
+  margin-bottom: 20px; /* Add margin between items */
 }
 
 .inventory_item_name {
@@ -292,6 +293,21 @@ export default {
   border: 1px solid #132322;
   color: #132322;
   background-color: #fff;
+}
+
+@media screen and (max-width: 1060px) {
+  .inventory_item {
+    border: 1px solid #ededed;
+    background: #fff;
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 240px;
+    width: 100%;
+    margin-bottom: 12px; /* Add margin between items */
+  }
 }
 
 @media screen and (max-width: 550px) {

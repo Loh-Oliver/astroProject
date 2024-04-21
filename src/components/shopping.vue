@@ -2,8 +2,23 @@
   <div class="shopping_container">
     <header>
       <nav>
-        <div class="burger_menu_wrapper">
-          <div class="burger_menu">≡</div>
+        <div>
+          <!-- Add a click event handler to toggle the 'active' class -->
+          <div
+            class="burger_menu"
+            @click="toggleMenu"
+            :class="{ active: isMenuActive }"
+          >
+            ≡
+          </div>
+          <!-- Apply the 'active' class conditionally based on the 'isMenuActive' state -->
+          <div class="off_screen_menu" :class="{ active: isMenuActive }">
+            <div class="off_screen_btn" @click="toggleMenu">✕</div>
+            <span>All Items</span>
+            <span>About</span>
+            <span>Logout</span>
+            <span>Reset App State</span>
+          </div>
         </div>
         <div class="header_name">Swag Labs</div>
         <div class="cart_btn">
@@ -101,10 +116,15 @@ export default {
     return {
       page: "products",
       cart: [],
+      isMenuActive: false, // Initially, the menu is not active
     };
   },
 
   methods: {
+    toggleMenu() {
+      // Toggle the 'isMenuActive' state
+      this.isMenuActive = !this.isMenuActive;
+    },
     addItemToCart(product) {
       this.cart.push(product);
     },
@@ -115,7 +135,7 @@ export default {
       this.page = page;
     },
   },
-  
+
   components: { Products, Cart },
 };
 </script>
@@ -178,6 +198,57 @@ nav {
   margin: 0 50px;
 }
 
+/* burger style */
+.off_screen_menu {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  max-width: 300px;
+  position: fixed;
+  top: 0;
+  z-index: 999; /* Ensure the overlay appears in front */
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  text-align: left;
+  font-size: 3rem;
+  left: -450px;
+  transition: 0.3s ease;
+}
+
+.off_screen_menu.active {
+  left: 0;
+}
+
+.off_screen_menu span {
+  width:200px;
+  border-bottom: 1px solid #ededed;
+  color: #18583a;
+  display: inline-block;
+  font-family: "DM Mono", "sans-serif";
+  font-size: 16px;
+  margin-bottom: 7px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.off_screen_btn {
+  align-self: flex-end;
+  margin-right: 10px;
+  align-items: flex-end;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* ham menu */
+.burger_menu {
+  height: 50px;
+  width: 40px;
+  margin-left: auto;
+  position: relative;
+}
+
 /* cart style */
 
 .cart_btn {
@@ -230,24 +301,23 @@ nav {
   color: white;
 }
 
-
 .social li {
-  display: inline-block; /* Display social icons horizontally */
-  margin-right: 10px; /* Add some space between social icons */
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .social li a {
-  display: inline-block; /* Ensure anchor tags behave as blocks */
-  width: 40px; /* Set the width and height of the circular icon */
+  display: inline-block;
+  width: 40px;
   height: 40px;
-  border-radius: 50%; /* Make the icon circular */
-  background-color: #70cc84; /* Background color of the icon */
-  text-align: center; /* Center align the text */
-  line-height: 40px; /* Vertically center the text */
+  border-radius: 50%;
+  background-color: #70cc84;
+  text-align: center;
+  line-height: 40px;
 }
 
 .social li a:hover {
-  background-color: green; /* Darken the background color on hover */
+  background-color: green;
 }
 
 .social_icon {

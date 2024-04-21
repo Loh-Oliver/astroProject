@@ -1,27 +1,9 @@
-# astro Project
-Getting Started
-Prerequisites
-Make sure you have Node.js and npm installed on your machine.
+# Astro Starter Kit: Minimal
+## Project Structure
 
-**##Installation**
-Clone this repository to your local machine:
-git clone https://github.com/Loh-Oliver/astroProject.git
-Navigate to the project directory:
-cd astroProject
-Install dependencies:
-npm install
-**##Usage**
-Start the development server:
-npm run dev
-This will start the development server and open the project in your default web browser. You can view your Astro app and make changes in real-time.
-Build for production:
-npm run build
-This command generates a production-ready build of your app in the dist directory. You can deploy this build to any static hosting provider.
+Inside of your Astro project, you'll see the following folders and files:
 
-##Features
-
-Directory Structure
-csharp
+```text
 astroProject/
 │
 ├── src/                 # Source files
@@ -29,8 +11,24 @@ astroProject/
 │   ├── pages/           # Astro pages
 │   └── assets/          # Static assets
 │
+├── astro.config.mjs/
+├── package-lock.json/
+├── package.json/ 
 └── README.md            # Project documentation
+```
 
-Acknowledgments
-Vue.js
-Astro
+
+
+## Installation
+
+1. Clone this repository to your local machine:
+   git clone https://github.com/Loh-Oliver/astroProject.git
+2. Navigate to the project directory:
+   cd astroProject
+3. Install dependencies:
+   `npm install`
+
+## Usage
+Start the development server: 
+  `npm run dev`
+

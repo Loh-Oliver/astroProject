@@ -37,9 +37,9 @@
             />
           </div>
           <p class="error_msg" v-if="data.errorMessage">
-          {{ data.errorMessage }}
-          <button class="close_btn" @click="clearErrorMessage">x</button>
-        </p>
+            {{ data.errorMessage }}
+            <button class="close_btn" @click="clearErrorMessage">x</button>
+          </p>
 
           <button type="submit" class="login_btn">Login</button>
         </form>
@@ -187,8 +187,8 @@ header {
 .username_group img {
   color: #e2231a;
   font-size: 18px;
-  position: absolute;
-  right: 630px;
+  position: fixed;
+  right: 38%;
   top: 167px;
   height: 25px;
   width: 25px;
@@ -198,14 +198,10 @@ header {
   color: #e2231a;
   font-size: 18px;
   position: absolute;
-  right: 630px;
+  right: 38%;
   top: 215px;
   height: 25px;
   width: 25px;
-}
-
-label {
-  font-weight: bold;
 }
 
 .error_msg {
@@ -213,32 +209,24 @@ label {
   background-color: red;
   color: white;
   height: 50px;
-  margin:10px 25%;
+  margin: 10px 25%;
 }
 
 .close_btn {
-  position: absolute;
-  top: 260px;
-  right: 630px;
+  position: fixed;
+  top: 255px;
+  right: 37%;
   padding: 5px 10px;
   font-size: 15px;
   background-color: transparent;
   color: white;
-  border: none; 
+  border: none;
   cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {
   .login_credentials {
     display: block;
-    max-width: 75%;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #000;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    color: #fff;
   }
 }
 </style>

@@ -247,6 +247,7 @@ nav {
   width: 40px;
   margin-left: auto;
   position: relative;
+  cursor: pointer;
 }
 
 /* cart style */

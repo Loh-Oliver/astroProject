@@ -41,6 +41,7 @@
         <button class="btn product_btn" v-on:click="navigateTo('products')">
           Continue Shopping
         </button>
+        <div class="cart_footer_spacer"></div>
         <button class="btn checkout_btn" v-on:click="navigateTo('products')">
           Checkout
         </button>
@@ -114,7 +115,7 @@ export default {
     return {
       page: "products",
       cart: [],
-      isMenuActive: false, 
+      isMenuActive: false,
     };
   },
 
@@ -140,12 +141,12 @@ export default {
 
 <style>
 .shopping_container {
-  width: 100vw; 
-  height: 100vh; 
-  overflow-x: hidden; 
-  overflow-y: auto; 
-  margin: 0; 
-  padding: 0; 
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
 }
 body {
   margin: 0;
@@ -196,6 +197,7 @@ nav {
   margin: 0 50px;
 }
 
+
 /* burger style */
 .off_screen_menu {
   background-color: white;
@@ -207,7 +209,7 @@ nav {
   z-index: 999; /* Ensure the overlay appears in front */
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   text-align: left;
   font-size: 3rem;
   left: -450px;
@@ -219,7 +221,7 @@ nav {
 }
 
 .off_screen_menu span {
-  width:200px;
+  width: 200px;
   border-bottom: 1px solid #ededed;
   color: #18583a;
   display: inline-block;
@@ -248,7 +250,6 @@ nav {
   cursor: pointer;
 }
 
-/* cart style */
 
 .cart_btn {
   display: relative;
@@ -257,47 +258,57 @@ nav {
 }
 
 .cart_notification {
-  position: absolute; 
+  position: absolute;
   top: 15px;
   right: 5px;
-  background-color: red; 
-  color: white; 
-  width: 25px; 
+  background-color: red;
+  color: white;
+  width: 25px;
   height: 25px;
-  border-radius: 50%; 
-  font-size: 12px; 
+  border-radius: 50%;
+  font-size: 12px;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
+}
+
+/* cart page footer style */
+.cart_footer{
+  display: flex;
+  margin-bottom: 40%;
+}
+.cart_footer_spacer{
+  width:70%;
 }
 
 .product_btn {
-  width: calc(100% - 40px);
-  margin-left: 15px;
-  margin-right: 15px;
+  width: 250px;
   border-radius: 4px;
   background-color: white;
   border: 2px solid black;
-  margin-bottom: 20px;
   overflow-x: auto;
+  margin-left: 20px;
+  
 }
 
 .checkout_btn {
-  width: calc(100% - 40px);
-  margin-left: 15px;
-  margin-right: 15px;
+  width: 250px;
   border-radius: 4px;
   background-color: #70cc84;
   border: none;
-  margin-bottom: 100%;
+  margin-right: 20px;
 }
 
 /* footer style */
 .footer {
   background-color: #132322;
-  padding: 20px; 
-  text-align: center; 
+  padding: 20px;
   color: white;
+  align-items: flex-start;
+}
+
+.social {
+  padding: 0;
 }
 
 .social li {
@@ -320,9 +331,32 @@ nav {
 }
 
 .social_icon {
-  width: 20px; 
-  height: 20px; 
-  overflow: hidden; 
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
   margin-top: 9px;
+}
+
+@media screen and (max-width: 1060px) {
+  .footer {
+    text-align: center;
+  }
+
+  .cart_footer{
+    display: block;
+  }
+
+.product_btn {
+  width: calc(100% - 100px);
+  margin-left:40px;
+}
+
+.checkout_btn {
+  width: calc(100% - 100px);
+  margin-left:40px;
+}
+
+
+ 
 }
 </style>

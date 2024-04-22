@@ -61,7 +61,7 @@ export default {
     return {
       products: [],
       selectedFilter: "alphabeticalAZ",
-      isPrimary: true, //Track button style
+      isPrimary: true, 
     };
   },
   mounted() {
@@ -118,7 +118,7 @@ export default {
       this.products[productIndex].addedToCart =
         !this.products[productIndex].addedToCart;
 
-      // Update the JSON file
+     /*  // Update the JSON file
       const updatedProducts = { products: this.products };
       fetch("./src/components/products.json", {
         method: "PUT", // Use PUT method to update the file
@@ -136,7 +136,7 @@ export default {
         })
         .catch((error) => {
           console.error("Error updating product cart status:", error);
-        });
+        }); */
     },
   },
 };
@@ -149,8 +149,8 @@ export default {
   align-items: center;
   width: 100%;
   font-family: "DM Mono";
-  border-top: 1px solid #ededed; /* Example color */
-  border-bottom: 1px solid #ededed; /* Example color */
+  border-top: 1px solid #ededed; 
+  border-bottom: 1px solid #ededed; 
   height: 56px;
   margin-bottom: 50px;
   padding-left: 15px;
@@ -177,7 +177,7 @@ export default {
   width: 250px;
   height: 35px;
   margin-right: 30px;
-  text-indent: 60px; /* Adjust this value based on the width of the background image */
+  text-indent: 60px; 
 }
 
 .inventory_container {
@@ -208,8 +208,8 @@ export default {
   height: 240px;
   width: calc(
     50% - 10px
-  ); /* Set the width of each item to 50% minus the space between */
-  margin-bottom: 20px; /* Add margin between items */
+  ); 
+  margin-bottom: 20px; 
 }
 
 .inventory_item_name {
@@ -218,8 +218,8 @@ export default {
 }
 
 .image-container {
-  flex: 0 0 auto; /* Don't allow image to grow */
-  margin-right: 20px; /* Add space between image and details */
+  flex: 0 0 auto; 
+  margin-right: 20px;
 }
 
 .inventory_item_img img {
@@ -240,10 +240,10 @@ export default {
   font-size: 20px;
   font-weight: 500;
   color: #18583a;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none; 
 }
 .inventory_item_name:hover {
-  color: #70cc84; /* Change text color on hover */
+  color: #70cc84; 
 }
 
 .inventory_item_desc {
@@ -306,7 +306,7 @@ export default {
     border-radius: 8px;
     height: 240px;
     width: 100%;
-    margin-bottom: 12px; /* Add margin between items */
+    margin-bottom: 12px;
   }
 }
 
@@ -323,18 +323,18 @@ export default {
   }
 
   .image-container {
-    flex: 0 0 auto; /* Don't allow image to grow */
-    margin-right: 20px; /* Add space between image and details */
+    flex: 0 0 auto; 
+    margin-right: 20px; 
   }
 
   .inventory_item_img img {
     width: 50%;
-    display: block; /* Ensures the image is centered */
-    margin: 0 auto; /* Centers the image horizontally */
+    display: block;
+    margin: 0 auto; 
   }
 
   .pricebar {
-    flex-direction: column; /* Change flex-direction to column */
+    flex-direction: column; 
     gap: 20px;
   }
 
@@ -352,12 +352,12 @@ export default {
     background-image: url("/src/assets/Filtericon.webp");
     background-repeat: no-repeat;
     background-size: 60%;
-    background-position: center; /* Adjust the position of the image */
+    background-position: center; 
     border: 1px solid #ededed;
     box-sizing: border-box;
     border-radius: 5px;
-    padding: 0; /* Remove padding to fit only the image */
-    width: 40px; /* Set width to the width of the image */
+    padding: 0; 
+    width: 40px;
     height: 35px;
     margin-right: 30px;
     color: transparent;

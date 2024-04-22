@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import Products from "./Products.vue";
+import Products from "./products.vue";
 export default {
   props: ["cart"],
   methods: {

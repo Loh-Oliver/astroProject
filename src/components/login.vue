@@ -83,7 +83,7 @@ let inputBorderColor = "";
 
 const login = () => {
   if (data.username === "standard_user" && data.password === "secret_sauce") {
-    // Redirect to another page if credentials match
+    // Redirect to home page if credentials match
     window.location.href = "/shop";
   } else if (
     data.username !== "standard_user" &&

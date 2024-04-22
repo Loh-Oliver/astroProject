@@ -3,7 +3,6 @@
     <header>
       <nav>
         <div>
-          <!-- Add a click event handler to toggle the 'active' class -->
           <div
             class="burger_menu"
             @click="toggleMenu"
@@ -11,7 +10,6 @@
           >
             ≡
           </div>
-          <!-- Apply the 'active' class conditionally based on the 'isMenuActive' state -->
           <div class="off_screen_menu" :class="{ active: isMenuActive }">
             <div class="off_screen_btn" @click="toggleMenu">✕</div>
             <span>All Items</span>
@@ -107,7 +105,7 @@
 </template>
 
 <script>
-import Products from "./Products.vue";
+import Products from "./products.vue";
 import Cart from "./cart.vue";
 
 export default {
@@ -116,7 +114,7 @@ export default {
     return {
       page: "products",
       cart: [],
-      isMenuActive: false, // Initially, the menu is not active
+      isMenuActive: false, 
     };
   },
 
@@ -142,12 +140,12 @@ export default {
 
 <style>
 .shopping_container {
-  width: 100vw; /* Set width to 100% of the viewport width */
-  height: 100vh; /* Set height to 100% of the viewport height */
-  overflow-x: hidden; /* Hide horizontal overflow */
-  overflow-y: auto; /* Enable vertical scrolling if needed */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  width: 100vw; 
+  height: 100vh; 
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  margin: 0; 
+  padding: 0; 
 }
 body {
   margin: 0;
@@ -259,18 +257,18 @@ nav {
 }
 
 .cart_notification {
-  position: absolute; /* Position the circle span relative to its parent */
-  top: 15px; /* Adjust the top position */
-  right: 5px; /* Adjust the right position */
-  background-color: red; /* Background color of the circle */
-  color: white; /* Text color */
-  width: 25px; /* Width of the circle */
-  height: 25px; /* Height of the circle */
-  border-radius: 50%; /* Make it a circle */
-  font-size: 12px; /* Font size of the number */
-  display: flex; /* Use flexbox for centering content */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  position: absolute; 
+  top: 15px;
+  right: 5px;
+  background-color: red; 
+  color: white; 
+  width: 25px; 
+  height: 25px;
+  border-radius: 50%; 
+  font-size: 12px; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
 }
 
 .product_btn {
@@ -281,7 +279,7 @@ nav {
   background-color: white;
   border: 2px solid black;
   margin-bottom: 20px;
-  overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+  overflow-x: auto;
 }
 
 .checkout_btn {
@@ -296,9 +294,9 @@ nav {
 
 /* footer style */
 .footer {
-  background-color: #132322; /* Background color of the footer */
-  padding: 20px; /* Padding around the footer content */
-  text-align: center; /* Center align the content within the footer */
+  background-color: #132322;
+  padding: 20px; 
+  text-align: center; 
   color: white;
 }
 
@@ -322,9 +320,9 @@ nav {
 }
 
 .social_icon {
-  width: 20px; /* Adjust the width of the icon */
-  height: 20px; /* Adjust the height of the icon */
-  overflow: hidden; /* Hide any overflow beyond the circle */
+  width: 20px; 
+  height: 20px; 
+  overflow: hidden; 
   margin-top: 9px;
 }
 </style>

@@ -76,10 +76,12 @@ interface Data {
 const data: Data = reactive({
   username: "",
   password: "",
-  errorMessage: "",
+  errorMessage: "Epic sadface: You can only access '/inventory.html' when you are logged in.",
+  
 });
 
-let inputBorderColor = "";
+let inputBorderColor = data.errorMessage ? "red" : "";
+
 
 const login = () => {
   if (data.username === "standard_user" && data.password === "secret_sauce") {
